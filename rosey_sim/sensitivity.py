@@ -18,9 +18,6 @@ class Model:
         self.params = params
 
     def sample(self, n=None):
-        """
-        Samples model_function from the params distribution
-        """
         params_dict = {param.name: param.sample(n) for param in self.params}
         return self.model_function(**params_dict)
 
@@ -49,3 +46,16 @@ if __name__ == '__main__':
     trace = profit_model.sample(10000)
     sns.distplot(trace, label='All at once')
     graph.show()
+
+    # Nesting
+    def random_divide(profit_func, denom):
+        return profit_func / denom
+
+    final_model = Model(
+        random_divide,
+        params=[
+            profit_model,
+            Parameter('denom', [3, 4])
+        ]
+    )
+    print(final_model.sample())

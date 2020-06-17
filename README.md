@@ -37,4 +37,17 @@ sns.distplot(trace, label='One at a time')
 trace = profit_model.sample(10000)
 sns.distplot(trace, label='All at once')
 graph.show()
+
+# Even nesting is allowed
+def random_divide(profit_func, denom):
+    return profit_func / denom
+
+final_model = Model(
+    random_divide,
+    params=[
+        profit_model,
+        Parameter('denom', [3, 4])
+    ]
+)
+print(final_model.sample())
 ```
