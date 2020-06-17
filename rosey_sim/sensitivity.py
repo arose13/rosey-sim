@@ -13,6 +13,7 @@ class Parameter:
 
 class Model:
     def __init__(self, model_function: callable, params: list):
+        self.name = model_function.__name__
         self.model_function = model_function
         self.params = params
 
