@@ -22,8 +22,9 @@ setup(
     name='rosey-sim',
     version=__version__,
     description='Causal, Probabilistic and Uncertainty Simulations',
-    long_description=long_description,
-    url='https://github.com/arose13/rosey-keras',
+    # long_description=long_description,
+    # long_description_content_type='text/markdown',
+    url='https://github.com/arose13/rosey-sim',
     license='BSD',
     classifiers=[
         'Development Status :: 4 - Beta',

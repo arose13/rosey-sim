@@ -1,6 +1,12 @@
 # Rosey-sim
 Causal, Probabilistic and Uncertainty Simulations
 
+## Installation
+```bash
+pip install rosey-sim
+```
+
+## Example
 ```python
 from rosey_sim.sensitivity import Model, Parameter
 from tqdm import trange
